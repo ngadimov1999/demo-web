@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class PostService {
     public ArrayList<Post> listAllPosts(){
         return new ArrayList<Post> (Arrays.asList(new Post("Ольгу Бузову повесили на сцене", 5000000),
-                new Post("Дима Билан скончался от передоза", 25000),
+                new Post("Дима Билан до сих пор жив", 25000),
                 new Post("Куда пропал Рома Жёлудь?", 3000)));
     }
 }
