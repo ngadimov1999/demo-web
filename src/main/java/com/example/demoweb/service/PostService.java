@@ -10,13 +10,16 @@ import java.util.Arrays;
 @Service
 public class PostService {
 
-    public ArrayList<Post> listAllPosts(){
-        return new ArrayList<Post> (Arrays.asList(new Post("Ольгу Бузову повесили на сцене", 5000000, new Date()),
-                new Post("Дима Билан до сих пор жив", 25000, new Date()),
-                new Post("Куда пропал Рома Жёлудь?", 3000, new Date())));
+    private ArrayList<Post> posts = new ArrayList<Post>(Arrays.asList(new Post("Ольгу Бузову повесили на сцене", new Date()),
+            new Post("Дима Билан до сих пор жив",  new Date()),
+            new Post("Куда пропал Рома Жёлудь?",  new Date())));
+
+
+    public ArrayList<Post> listAllPosts() {
+        return posts;
     }
 
-//    public void create(String text) {
-//        posts.add(new Post(text, new Date()));
-//    }
+    public void create(String text) {
+        posts.add(new Post(text, new Date()));
+    }
 }
