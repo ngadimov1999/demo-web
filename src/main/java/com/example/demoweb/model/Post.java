@@ -1,13 +1,13 @@
 package com.example.demoweb.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Post {
     private String text;
     private Integer likes;
     private Date creationDate;
 
-    public Post(String text, Integer likes){
+    public Post(String text, Integer likes, Date creationDate){
         this.text = text;
         this.likes = likes;
         this.creationDate = creationDate;
@@ -19,5 +19,7 @@ public class Post {
     public Integer getLikes(){
         return this.likes;
     }
-    public Date getCreationDate(){return this.creationDate;}
+    public Date getCreationDate(){
+        return creationDate;
+    }
 }
