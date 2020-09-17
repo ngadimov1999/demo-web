@@ -10,9 +10,9 @@ import java.util.Arrays;
 @Service
 public class PostService {
 
-    private ArrayList<Post> posts = new ArrayList<Post>(Arrays.asList(new Post("Ольгу Бузову повесили на сцене", new Date()),
-            new Post("Дима Билан до сих пор жив",  new Date()),
-            new Post("Куда пропал Рома Жёлудь?",  new Date())));
+    private ArrayList<Post> posts = new ArrayList<Post>(Arrays.asList(new Post(0L,"Ольгу Бузову повесили на сцене", new Date()),
+            new Post(1L,"Дима Билан до сих пор жив",  new Date()),
+            new Post(2L,"Куда пропал Рома Жёлудь?",  new Date())));
 
 
     public ArrayList<Post> listAllPosts() {
@@ -20,6 +20,6 @@ public class PostService {
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        posts.add(new Post((long) posts.size(), text, new Date()));
     }
 }
