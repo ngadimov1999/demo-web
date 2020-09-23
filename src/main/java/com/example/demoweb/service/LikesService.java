@@ -9,11 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class LikesService {
 
     @Autowired
-    PostService postService;
+    PostRepository postRepository;
 
-    public int like(Long id){
-        Post post = postService.listAllPosts().get(id.intValue());
+    public int like(Long postId) {
+        Post post = postRepository.findById(postId).get();
         post.setLikes(post.getLikes() + 1);
+        postRepository.save(post);
         return post.getLikes();
     }
 }
