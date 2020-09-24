@@ -12,7 +12,7 @@ public class LikesService {
     PostRepository postRepository;
 
     public int like(Long postId) {
-        Post post = postRepository.findById(postId).orElse(null);
+        Post post = postRepository.findById(postId).orElseThrow(null);
         post.setLikes(post.getLikes() + 1);
         postRepository.save(post);
         return post.getLikes();
